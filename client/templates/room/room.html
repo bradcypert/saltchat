@@ -1,0 +1,20 @@
+<template name="room">
+  <h2>You're Chatting in: <i class="fa fa-{{faicon}}"></i> {{this.name}}</h2>
+  <div class='main-chat-frame'>
+    <p class='chat-window'>
+      <i><b class='saltbot-text'>Saltbot: </b>Welcome to {{this.name}}. Type /help for more options.</i><br/>
+      {{#each messages}}
+        <b class='{{#if isMe }}user-text{{/if}} username' style='{{#unless isMe}} {{randomColor}} {{/unless}}'>{{user}}: </b>{{message}} <br/>
+      {{/each}}
+    </p>
+    <input type='text' class='chat-input' placeholder='Message Here!' >
+  </div>
+  {{#if shouldReport}}
+  <div class='report-user-backdrop'></div>
+  <div class='report-user-frame' >
+      <div class='close-report-text' style='float: right; margin-right: 4px; cursor: pointer;'>X</div>
+      <h4 class='report-text text-center'>Really report {{reportUserName}}?</h4>
+      <button class='frame-btn error fire-off-report' style='display: block; margin: 0 auto;'>Yes</button><button class='frame-btn close' style='display: block; margin: 10px auto;'>No</button>
+  </div>
+  {{/if}}
+</template>

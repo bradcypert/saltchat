@@ -1,0 +1,13 @@
+<template name="header">
+  <header>
+    <div class='container'>
+      <h1><a href="{{pathFor 'home'}}"><i class="fa fa-cube"></i>SaltChat! 10x the salt!</a></h1>
+      <nav class="menu">
+        <a class="menu-item" href="{{pathFor 'roomList'}}"><i class="fa fa-comments"></i> Rooms</a>
+        <a class="menu-item" href="{{pathFor 'faq'}}"><i class="fa fa-book"></i> FAQ</a>
+        <a class="menu-item" href="{{pathFor 'events'}}"><i class="fa fa-calendar"></i> Events</a>
+      </nav>
+      <div>{{#if currentUser}}<i class="fa fa-user" style='padding-right: 4px; position: relative; top: 1px;'></i>{{/if}}{{>loginButtons}}</div>
+    </div>
+  </header>
+</template>

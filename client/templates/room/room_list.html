@@ -1,0 +1,14 @@
+<template name='roomList'>
+  <div class='room-list-block'>
+    <h2>Public Rooms</h2>
+    <ul class='room-list'>
+      {{#each rooms}}
+        <a href="{{pathFor 'room' _id=this._id}}"><li><i class="fa fa-{{faicon}}"></i>{{name}}</li></a>
+      {{/each}}
+    </ul>
+  </div>
+  <div class='room-list-block'>
+    <h2>Private Rooms</h2>
+    <h4 >You're not currently subscribed to any private rooms.</h4>
+  </div>
+</template>
