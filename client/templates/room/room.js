@@ -32,7 +32,7 @@ Template.room.helpers({
 
 Template.room.events({
   'keydown .chat-input': function(event, template){
-    if(event.which === 13){
+    if (event.which === 13) {
       var message = template.find(".chat-input").value;
       chatCollection.insert({
         userId: Meteor.user().username,
@@ -52,7 +52,7 @@ Template.room.events({
       //Bundle what gets sent. The Else is just a fallback for server side
       //Support if that's actually needed.
       var bundle;
-      if(Meteor.isClient)
+      if (Meteor.isClient)
         bundle = {message: message, room: window.location.pathname};
       else
         bundle = message;
@@ -87,6 +87,7 @@ Template.room.events({
 });
 
 chatStream.on('chat', function(message) {
+  debugger;
   if(message.room === window.location.pathname){
     chatCollection.insert({
       userId: this.userId,

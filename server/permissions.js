@@ -1,7 +1,7 @@
 chatStream.permissions.read(function(eventName) {
-  return eventName == 'chat';
+  return true;
 });
 
 chatStream.permissions.write(function(eventName) {
-  return eventName == 'chat';
+  return true;
 });
